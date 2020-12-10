@@ -1,0 +1,37 @@
+<app-header></app-header>
+<h2 style="text-align: center;background-color: rgba(141, 17, 17, 0.89); padding: 10px;margin-top: -2.3%;"><span style="color: white;"> Categories</span></h2>
+<div class="row" style="margin-left: 37%;">
+    <div class="col-md-7">
+        <input type="text" [(ngModel)]="searchText" name="searchText" placeholder="Search Book, Author, category" style="width: 300px;">
+        <button class="btn btn-success" (click)="searchBooks()">Go</button>
+    </div>
+</div>
+<ul class="list-unstyled my-0 row row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-wd-4">
+    <div *ngFor="let category of catagories">
+        <li class="product-category col mb-5 mb-xl-0" style="margin: 1%;">
+            <div class="card" style="margin: 3.5%; width: 90%;">
+                <div class="card-body">
+                    <h3 class="text-truncate font-size-3">{{category.lable}}</h3>
+                    <p class="card-text">{{category.desc}}</p>
+                    <a class="btn btn-success" (click)="showCategoriesBook(category.value)">View Books</a>
+                </div>
+            </div>
+        </li>
+    </div>
+</ul>
+<br><br>
+<div *ngIf="showLibraryFunctions">
+    <div class="card" style="margin: 3.5%;">
+        <h3 class="text-truncate font-size-3" style="text-align: center;margin-top: 2%;">User List</h3>
+        <hr>
+        <ul class="list-unstyled my-0 row row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-wd-4" style="margin-left: 15%;margin-top: 2%;">
+            <div *ngFor="let user of userList">
+                <div class="card-text" style="margin-top: 4%;margin-bottom: 4%;">
+                    <span class="card-text"><h2>{{user.name}}</h2></span>
+                    <a class="btn userbtn btn-outline-warning" (click)="searchBooksIssuedToUser(user)">View issued Books</a>
+                </div>
+            </div>
+        </ul>
+
+    </div>
+</div>

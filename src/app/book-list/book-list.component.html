@@ -1,0 +1,83 @@
+<app-header></app-header>
+<h2 style="text-align: center;background-color: rgba(141, 17, 17, 0.89); padding: 10px;margin-top: -2.3%;"><span style="color: white;"> {{title}}</span></h2>
+<div style="margin-left:7%;">
+    <div *ngIf="filteredBooks.length==0" style="background-color: white;margin: 1% 20% 1% 20%; text-align: center;"><span style="color: rgba(141, 17, 17, 0.89);"><h2>No Books Issued</h2></span></div>
+    <div *ngFor="let book of filteredBooks">
+        <div class="col-lg-11 mb-4">
+            <div class="card">
+
+                <div class=" row" style="padding: 2%;">
+                    <div class="col-md-5">
+                        <img class="card-img-top" src="../../assets/images/literature.jpg" alt="">
+                    </div>
+
+                    <div class="col-md-7">
+                        <div class="card-body " style="text-align: center; margin-top: 2%;">
+                            <h5 class="card-title">{{book.title}}</h5>
+                            <p class="card-text">
+                                Author: {{book.author}}
+                                <br> Category: {{book.category}}
+                                <br>
+
+
+                            </p>
+                            <div *ngIf="!book.issued">
+                                <span style="font-size: smaller;font-family: monospace;">Kept in Rack:
+                                    {{book.rackNo}}</span><br><br>
+                                <a class="btn btn-outline-primary btn-sm" (click)="open(mymodal, book.id)">
+
+                                    Issue Now
+                                </a>
+                            </div>
+                            <div *ngIf="book.issued">
+                                <br>
+                                <div *ngIf="showLibraryFunctions">
+                                    <a (click)="open(releasemodal, book.id)" class="btn btn-outline-danger btn-sm not available" disabled style="font-size: larger;">
+                                        Not Available
+                                    </a>
+                                </div>
+                                <div *ngIf="!showLibraryFunctions">
+                                    <a class="btn btn-outline-danger btn-sm not available" disabled style="font-size: larger;">
+                                        Not Available
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Issue "{{selectedBook.title}}"<br> from rack# {{selectedBook.rackNo}} </h4>
+    </div>
+    <div *ngIf="showLibraryFunctions">
+        <div class="modal-body" style="margin:9%;">
+            <h5>to:</h5><br>
+            <select name="selectedUser" class="form-control" [(ngModel)]="selectedUser">
+            <option *ngFor="let usr of users" [value]="usr.id" >{{usr.name}}</option>
+        </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close();issueBook()">Issue</button>
+    </div>
+</ng-template>
+<ng-template #releasemodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Received "{{selectedBook.title}}" <br> from {{issuedUser.name}}
+        </h4>
+    </div>
+    <div class="modal-body" style="margin:9%;">
+        <select name="received" class="form-control" [(ngModel)]="received">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close();releaseBook()">Submit</button>
+    </div>
+</ng-template>

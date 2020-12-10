@@ -1,0 +1,34 @@
+* {
+    color: rgba(141, 17, 17, 0.89);
+    font-weight: bold;
+}
+
+
+/* .container {
+    display: flex;
+} */
+
+.col-md-3 {
+    background-color: aqua;
+}
+
+.btn {
+    color: white;
+}
+
+input {
+    height: 37px;
+    font-size: medium;
+}
+
+button {
+    margin-top: -1%;
+}
+
+.userbtn {
+    color: orange;
+}
+
+.userbtn:hover {
+    color: rgba(141, 17, 17, 0.89);
+}

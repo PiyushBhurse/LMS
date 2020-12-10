@@ -1,0 +1,139 @@
+{
+  "users": [
+    {
+      "name": "Librarian",
+      "email": "admin@mail.cc",
+      "password": "password",
+      "role": "librarian",
+      "id": 1
+    },
+    {
+      "name": "Piyush",
+      "email": "piyush.b@mail.cc",
+      "password": "password",
+      "role": "member",
+      "id": 2
+    },
+    {
+      "name": "Sumit",
+      "email": "skb@gmail.com",
+      "password": "password",
+      "role": "member",
+      "id": 3
+    }
+    ],
+  "books": [
+    {
+      "title": "The Call Of The Wild",
+      "author": "Jack London",
+      "category": "Adventure",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": null,
+      "rackNo": 3,
+      "id": 1
+    },
+    {
+      "title": "The Three Musketeers",
+      "author": "Alexandre Dumas",
+      "category": "Adventure",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": null,
+      "rackNo": 4,
+      "id": 2
+    },
+    {
+      "title": "The Three Musketeers",
+      "author": "Alexandre Dumas",
+      "category": "Adventure",
+      "issued": true,
+      "issuedTo": "2",
+      "issuedOn": "2020-11-26T13:13:41.437Z",
+      "rackNo": 5,
+      "id": 3
+    },
+    {
+      "title": "Watchmen",
+      "author": "Alen Moore",
+      "category": "Comic",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": null,
+      "rackNo": 6,
+      "id": 4
+    },
+    {
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "category": "Detective",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": "",
+      "rackNo": 7,
+      "id": 5
+    },
+    {
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "category": "Detective",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": "",
+      "rackNo": 2,
+      "id": 9
+    },
+    {
+      "title": "The Night Fire",
+      "author": "Michael Connelly",
+      "category": "Detective",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": "",
+      "rackNo": 8,
+      "id": 6
+    },
+    {
+      "title": "Carrie",
+      "author": "Stephen King",
+      "category": "Horror",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": "",
+      "rackNo": 9,
+      "id": 7
+    },
+    {
+      "title": "Bird Box",
+      "author": "Josh Malerman",
+      "category": "Horror",
+      "issued": false,
+      "issuedTo": 0,
+      "issuedOn": "",
+      "rackNo": 1,
+      "id": 8
+    }
+  ],
+  "categories": [
+    {
+      "lable": "Action and Adventure",
+      "desc": "All books and novels having Actions and Adventure in there stories.",
+      "value": "Adventure"
+    },
+    {
+      "lable": "Comic",
+      "desc": "All books and novels having Cartoons and Fun in there stories.",
+      "value": "Comic"
+    },
+    {
+      "lable": "Detective and Mystery",
+      "desc": "All books and novels having Mystery in there stories. Which invokes a detective in you.",
+      "value": "Detective"
+    },
+    {
+      "lable": "Horror",
+      "desc": "All books and novels having Mysticness in there stories. Which thrills you.",
+      "value": "Horror"
+    }
+  ]
+}
