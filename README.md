@@ -20,7 +20,7 @@ Steps to run:
 
 1. Open Command Prompt and navigate to project folder.
 
-2. Run command "json-server --watch ./server/db.json" it will start server at http://localhost:3000 
+2. Run command "json-server --watch db.json" it will start server at http://localhost:3000 
 
 3. Again open Command Prompt and navigate to project folder.
 
